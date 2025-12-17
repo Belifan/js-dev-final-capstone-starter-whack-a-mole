@@ -172,6 +172,24 @@ function startGame() {
 
 startButton.addEventListener("click", startGame);
 
+// Create a custom cursor
+const cursor = document.createElement('div');
+cursor.innerHTML = '🔨';
+cursor.style.cssText = 'position: fixed; font-size: 30px; pointer-events: none; z-index: 9999; transform: translate(-50%, -50%);';
+document.body.appendChild(cursor);
+
+document.addEventListener('mousemove', (e) => {
+  cursor.style.left = e.clientX + 'px';
+  cursor.style.top = e.clientY + 'px';
+});
+
+// Hide default cursor on grid
+document.querySelector('.grid').style.cursor = 'none';
+
+
+
+
+
 // Please do not modify the code below.
 // Used for testing purposes.
 window.randomInteger = randomInteger;
